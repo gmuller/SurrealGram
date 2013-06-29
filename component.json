@@ -1,0 +1,11 @@
+{
+    "name": "SurrealGram",
+    "version": "0.9",
+    "dependencies": {
+        "requirejs": "~2.1.6",
+        "underscore": "~1.4.4",
+        "backbone": "~1.0.0",
+        "text": "~2.0.7",
+        "bootstrap": "~2.3.2"
+    }
+}

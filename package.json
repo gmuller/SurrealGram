@@ -1,14 +1,14 @@
 {
-  "name": "AveragePhoto"
-, "version": "0.0.1"
-, "private": true
-, "dependencies": {
-    "connect": "2.7.0",
-		"express": "latest",
-		"mime": "latest",
-		"gm": "latest",
-		"temp": "latest"
-  }
-, "devDependencies": {
-  }
+    "name": "SurrealGram",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "connect": "2.7.0",
+        "express": "~3.3.1",
+        "mime": "latest",
+        "gm": "~1.10.0",
+        "temp": "latest"
+    },
+    "devDependencies": {
+    }
 }

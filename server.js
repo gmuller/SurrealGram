@@ -4,8 +4,7 @@ var url = require('url');
 var http = require('http');
 var app = express();
 
-app.use(express.static(__dirname));
-
+app.use(express.static('app'))
 app.get('/fetch', image_proxy());
 
 app.listen(3000);
