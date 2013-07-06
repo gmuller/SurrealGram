@@ -1,15 +1,20 @@
-define(['Backbone', 'lib/text/text!templates/app.html'],
+define(['Backbone'],
     function (Backbone, template) {
         var AppView = Backbone.View.extend({
             id: 'main',
             tagName: 'div',
             className: 'container-fluid',
             el: '#surrealgram',
-            template: _.template(template),
             numPics: 16,
             blendMode: "normal",
             blendAmount: ".25",
             sourceImages: [],
+            loaderOptions: {
+                text: "Loading",
+                textVisible: true,
+                theme: 'b',
+                textonly: false
+            },
 
             events: {
                 'click #refresh': 'reBlend',
@@ -39,6 +44,7 @@ define(['Backbone', 'lib/text/text!templates/app.html'],
 
             updateImages: function () {
                 var self = this;
+                $.mobile.loading('show', self.loaderOptions);
                 $.ajax({
                     dataType: "jsonp",
                     crossOrigin: true,
@@ -58,6 +64,8 @@ define(['Backbone', 'lib/text/text!templates/app.html'],
 
             reBlend: function() {
                 var self = this;
+                $.mobile.loading('show', self.loaderOptions);
+                $("#options").panel("close");
                 var img = self.srcImages[0];
                 img.onload();
             },
@@ -74,13 +82,13 @@ define(['Backbone', 'lib/text/text!templates/app.html'],
                     };
                     Pixastic.process(img, "blend", options, function (output) {
                         $el.html(output);
+                        $.mobile.loading('hide');
                     });
                 }
             },
 
             render: function () {
                 var self = this;
-                this.$el.html(this.template());
                 self.updateImages();
                 return this;
             }

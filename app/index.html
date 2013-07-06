@@ -2,13 +2,74 @@
 <html>
 <head>
     <title>SurrealGram</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script data-main="js/main.js" src="js/lib/requirejs/require.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="js/lib/jqm-flatui/generated/jquery.mobile.flatui.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body class="container-fluid" id="main">
-<div id="surrealgram"></div>
+<body>
+<div id="surrealgram" data-role="page">
+    <div data-role="panel" id="options" data-position="right" data-display="overlay">
+        <div>
+            <label for="blend_mode">Blend Mode</label>
+            <select id="blend_mode" name="blend_mode" data-theme="b">
+                <option value="normal">Normal</option>
+                <option value="multiply">Multiply</option>
+                <option value="lighten">Lighten</option>
+                <option value="darken">Darken</option>
+                <option value="darkercolor">Darker Color</option>
+                <option value="lightercolor">Lighter Color</option>
+                <option value="difference">Difference</option>
+                <option value="screen">Screen</option>
+                <option value="exclusion">Exclusion</option>
+                <option value="overlay">Overlay</option>
+                <option value="softlight">Soft Light</option>
+                <option value="hardlight">Hard Light</option>
+                <option value="colordodge">Color Dodge</option>
+                <option value="colorburn">Color Burn</option>
+                <option value="lineardodge">Linear Dodge</option>
+                <option value="linearburn">Linear Burn</option>
+                <option value="linearlight">Linear Light</option>
+                <option value="vividlight">Vivid Light</option>
+                <option value="pinlight">Pin Light</option>
+                <option value="hardmix">Hard Mix</option>
+            </select>
+        </div>
+        <div>
+            <form>
+                <label for="blend_amount">Blend Amount</label>
+                <input id="blend_amount" type="range" min="0" max="1" value=".25" step=".01" data-highlight="true"/>
+            </form>
+        </div>
+        <div>
+            <form>
+                <label for="num_pics">Number of Pictures</label>
+                <input id="num_pics" type="range" min="2" max="16" value="16" step="1" data-highlight="true"/>
+            </form>
+        </div>
+        <div>
+        <button id="refresh" data-theme="e" type="button">Blend</button>
+        </div>
+    </div>
+    <div data-role="header">
+        <h1>SurrealGram</h1>
+        <a href="#options" data-iconpos="notext" data-icon="flat-menu" class="ui-btn-right"></a>
+    </div>
+    <div data-role="content">
+        <div class="center-image" id="blended_image"></div>
+        <div>
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-a">
+                    <button id="update_images" data-theme="f" type="button">Refresh</button>
+                </div>
+                <div class="ui-block-b">
+                    <button id="share" data-theme="g" type="button">share</button>
+                </div>
+            </fieldset>
+        </div>
+
+    </div>
+</div>
+<script data-main="js/main.js" src="js/lib/requirejs/require.js"></script>
 </body>
 </html>

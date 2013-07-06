@@ -1,0 +1,9 @@
+.center-image {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#blended_image canvas {
+    max-width: 100%;
+    height: auto;
+}
