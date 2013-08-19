@@ -3,6 +3,7 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
+        "bower": "~0.8.6",
         "connect": "2.7.0",
         "express": "~3.3.1",
         "mime": "latest",

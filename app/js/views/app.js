@@ -1,5 +1,5 @@
 define(['Backbone'],
-    function (Backbone, template) {
+    function (Backbone) {
         var AppView = Backbone.View.extend({
             id: 'main',
             tagName: 'div',
@@ -21,7 +21,14 @@ define(['Backbone'],
                 'click #update_images': 'updateImages',
                 'change #num_pics': 'updateNumPics',
                 'change #blend_mode': 'updateBlendMode',
-                'change #blend_amount': 'updateBlendAmount'
+                'change #blend_amount': 'updateBlendAmount',
+                'click #share': 'share'
+            },
+
+            share: function() {
+                var c=$('#blended_image').find('canvas')[0];
+                var data = c.toDataURL("image/png").replace("image/png", "image/octet-stream");
+                window.location.href = data;
             },
 
             updateNumPics: function () {

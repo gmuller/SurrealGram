@@ -7,7 +7,7 @@ require.config({
         '_': 'lib/underscore/underscore-min',
         'Backbone': 'lib/backbone/backbone-min',
         'text': 'lib/text/text',
-        'pixastic': 'pixastic'
+        'pixastic': 'pixastic',
     },
     shim: {
         '_': {

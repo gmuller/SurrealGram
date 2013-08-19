@@ -10,7 +10,7 @@ node_modules
 pids
 logs
 results
-
+.vagrant/
 npm-debug.log
 app/js/lib
 .idea
