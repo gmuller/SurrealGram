@@ -3,6 +3,7 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
+				"connect-image-proxy": "https://github.com/gmuller/node-connect-image-proxy/tarball/9c1ffde577c9f07074dc20364e1027b3b3acfeb0",
         "bower": "~0.8.6",
         "connect": "2.7.0",
         "express": "~3.3.1",

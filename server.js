@@ -1,5 +1,5 @@
 var express = require('express');
-var image_proxy = require('./image-proxy');
+var image_proxy = require('connect-image-proxy');
 var url = require('url');
 var http = require('http');
 var app = express();
