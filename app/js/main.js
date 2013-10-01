@@ -7,11 +7,15 @@ require.config({
         '_': 'lib/underscore/underscore-min',
         'Backbone': 'lib/backbone/backbone-min',
         'text': 'lib/text/text',
-        'pixastic': 'pixastic',
+        'pixastic': 'pixastic'
     },
     shim: {
         '_': {
             exports: '_'
+        },
+        'jquery-mobile': {
+            deps: ['jquery'],
+            exports: 'jquery-mobile'
         },
         'Backbone': {
             deps: ['_', 'jquery'],
