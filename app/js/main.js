@@ -29,16 +29,18 @@ require.config({
 
 require(['jquery', 'jquery-mobile', 'app'],
     function($, jqm, App) {
-        $(document).bind("mobileinit", function () {
-            $.mobile.ajaxEnabled = false;
-            $.mobile.linkBindingEnabled = false;
-            $.mobile.hashListeningEnabled = false;
-            $.mobile.pushStateEnabled = false;
+        $(document).ready(function(){
+            $(document).bind("mobileinit", function () {
+                $.mobile.ajaxEnabled = false;
+                $.mobile.linkBindingEnabled = false;
+                $.mobile.hashListeningEnabled = false;
+                $.mobile.pushStateEnabled = false;
 
-            // Remove page from DOM when it's being replaced
-            $('div[data-role="page"]').live('pagehide', function (event, ui) {
-                $(event.currentTarget).remove();
+                // Remove page from DOM when it's being replaced
+                $('div[data-role="page"]').live('pagehide', function (event, ui) {
+                    $(event.currentTarget).remove();
+                });
             });
+            window.app = new App();
         });
-        window.app = new App();
     });
