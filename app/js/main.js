@@ -2,8 +2,8 @@ require.config({
     baseUrl: 'js',
     //urlArgs: "ts="+new Date().getTime(),
     paths: {
-        'jquery': "http://code.jquery.com/jquery-1.9.0.min",
-        'jquery-mobile': "http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min",
+        'jquery': "lib/jquery/jquery.min",
+        'jquery-mobile': "lib/jquery-mobile-bower/js/jquery.mobile-1.3.2",
         '_': 'lib/underscore/underscore-min',
         'Backbone': 'lib/backbone/backbone-min',
         'text': 'lib/text/text',
